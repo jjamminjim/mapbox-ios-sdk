@@ -57,6 +57,14 @@
 /** A Boolean value indicating whether the tiles from this source are opaque. Setting this correctly is important when using RMCompositeSource so that alpha transparency can be preserved when compositing tile images. */
 @property (nonatomic, assign, getter=isOpaque) BOOL opaque;
 
+/** A Boolean value indicating whether the tiles from this source are opaque. Setting this correctly is important when using RMCompositeSource so that alpha transparency can be preserved when compositing tile images. */
+
+/**  The desired blend mode of the tiles from this source. Should default to kCGBlendModeNormal. Setting this correctly is important when using RMCompositeSource so that desired CGBlendMode can be used when compositing tile images. */
+@property (nonatomic, assign) CGBlendMode blendMode;
+
+/**  The desired opacity of the tiles from this source, specified as a value between 0.0 and 1.0. A value of 0.0 renders the image totally transparent while 1.0 renders it fully opaque. Values larger than 1.0 are interpreted as 1.0. Should default to 1.0. Setting this correctly is important when using RMCompositeSource so that desired value can be used when compositing tile images. Make sure to also correctly set the opaque setting as required */
+@property (nonatomic, assign) CGFloat alpha;
+
 @property (nonatomic, readonly) RMFractalTileProjection *mercatorToTileProjection;
 @property (nonatomic, readonly) RMProjection *projection;
 

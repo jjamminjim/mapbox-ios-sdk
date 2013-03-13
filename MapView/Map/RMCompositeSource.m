@@ -147,8 +147,10 @@
 
     // composite the collected images together
     //
-    for (UIImage *tileImage in tileImages)
+    for (NSUInteger z = 0; z < [_tileSources count]; ++z)
     {
+        UIImage *tileImage = [tileImages objectAtIndex:z];
+      
         if ( ! [tileImage isKindOfClass:[UIImage class]])
             continue;
 
@@ -156,8 +158,18 @@
         {
             UIGraphicsBeginImageContext(image.size);
             [image drawAtPoint:CGPointMake(0,0)];
-            [tileImage drawAtPoint:CGPointMake(0,0)];
-
+            
+            id <RMTileSource> tileSource = [_tileSources objectAtIndex:z];
+            
+            if (tileSource.isOpaque)
+            {
+                [tileImage drawAtPoint:CGPointMake(0,0)];
+            }
+            else
+            {
+                [tileImage drawAtPoint:CGPointMake(0,0) blendMode:tileSource.blendMode alpha:tileSource.alpha];
+            }
+            
             image = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
         }
