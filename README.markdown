@@ -5,7 +5,7 @@ Based on the Route-Me iOS map library (Alpstein fork) with [MapBox][mapbox] cust
 
 Requires iOS 5, Xcode 4.3 or greater, and ARC. 
 
-![](https://raw.github.com/mapbox/mapbox-ios-sdk/packaging/screenshot.png)
+[![](https://raw.github.com/mapbox/mapbox-ios-sdk/packaging/screenshot.png)]()
 
 Major differences from [Alpstein fork of Route-Me](https://github.com/Alpstein/route-me): 
 
@@ -50,7 +50,7 @@ Installation
 There are three ways that you can install the SDK, depending upon your needs: 
 
  1. Clone from GitHub and integrate as a dependent Xcode project. 
- 1. Use the [binary framework](https://github.com/mapbox/mapbox-ios-sdk/tree/packaging/Downloads). Use like regular frameworks, linking it in your project, adding `#import <MapBox/MapBox.h>`, and additionally, including the `-ObjC` linker flag. 
+ 1. Use the [binary framework](http://mapbox-ios-sdk.s3.amazonaws.com/index.html). Use like regular frameworks, linking it in your project, adding `#import <MapBox/MapBox.h>`, and additionally, including the `-ObjC` linker flag. 
  1. Install via [CocoaPods](http://cocoapods.org). 
 
 More detailed information on the installation options is available in the [SDK guide](http://mapbox.com/mapbox-ios-sdk/). 
